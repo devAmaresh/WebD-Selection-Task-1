@@ -17,7 +17,7 @@
         const questionItem = checkbox.closest("li");
         questionItem.classList.toggle("completed", checkbox.checked);
         updateProgressBar(getCompletionRate());
-        // Save marked question's state to localStorage
+        // Saving marked question's state to localStorage
         localStorage.setItem(`question_${questionId}`, checkbox.checked);
       });
     });
@@ -42,7 +42,7 @@
       document.body.classList.add("dark-mode");
     }
   
-    // Add event listener for accordion behavior
+    // Adding event listener for accordion behavior
     const accordionTitles = document.querySelectorAll(".accordion-title");
     accordionTitles.forEach(titleElement => {
       titleElement.addEventListener("click", () => {
@@ -76,12 +76,12 @@
   
       const titleElement = document.createElement("h2");
       titleElement.textContent = item.title;
-      titleElement.classList.add("accordion-title"); // Add a class for styling
+      titleElement.classList.add("accordion-title"); // Added a class for styling
       accordionItem.appendChild(titleElement);
   
       const questionsList = document.createElement("ul");
-      questionsList.classList.add("accordion-content"); // Add a class for styling
-      questionsList.style.display = "none"; // Initially hide the content
+      questionsList.classList.add("accordion-content"); // Added a class for styling
+      questionsList.style.display = "none"; // Initially hiding the content
   
       item.ques.forEach(question => {
         const questionItem = document.createElement("li");
@@ -121,7 +121,7 @@
           `;
         }
   
-        questionItem.innerHTML += `</div></li>`; // Move the closing </div> and </li> tags together
+        questionItem.innerHTML += `</div></li>`; 
         questionsList.appendChild(questionItem);
       });
   
