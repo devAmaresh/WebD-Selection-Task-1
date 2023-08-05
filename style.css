@@ -1,0 +1,175 @@
+/* style.css */
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+body.light-mode {
+  background-color: #f1f1f1;
+  color: #000;
+}
+
+body.dark-mode {
+  background-color: rgb(15 23 42);
+  color: #fff;
+}
+
+#content {
+  max-width: auto;
+  margin-top:100px;
+  margin-bottom:2px;
+  margin-right:20px;
+  margin-left:20px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 4px 2px rgba(249, 0, 0, 0.751);
+  border: 2px solid #047dff; /* Blue border color */
+
+  /* Animation for increasing and decreasing the border-radius */
+  animation-name: borderAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes borderAnimation {
+  0%, 100% {
+    box-shadow: 0 0 4px 2px rgba(249, 0, 0, 0.751);
+    border-radius: 10px;
+  }
+  50% {
+    box-shadow: 0 0 10px 5px rgba(249, 0, 0, 0.751), 0 0 20px 10px rgb(4, 226, 255);
+    border-radius: 20px;
+  }
+}
+
+
+/* Accordion styles */
+.accordion {
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px;
+  background: linear-gradient(to left,rgb(196, 1, 255),rgb(244, 81, 108));
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+a:-webkit-any-link {
+  color: rgb(255, 238, 0);
+  cursor: pointer;
+  text-decoration: underline;
+}
+.accordion.active {
+  background: linear-gradient(to left, rgb(0, 255, 238), rgb(196, 1, 255));
+  border-color:rgb(76, 76, 175);
+}
+
+.accordion h2 {
+  margin: 0;
+  color: inherit;
+  font-weight: bold;
+}
+
+/* Question details styles */
+.accordion .question-details {
+  display: none;
+  margin-top: 10px;
+}
+
+.accordion .question-details a {
+  display: block;
+  margin-top: 5px;
+  color: blueviolet;
+  text-decoration: none;
+}
+
+/* Completed question style */
+li.completed {
+  background-color: rgb(83, 85, 81);
+  color:aqua
+}
+
+/* Progress bar styles */
+#progress-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 100%;
+  background-color: #f1f1f1;
+  z-index: 9999;
+}
+
+#progress-bar {
+  height: 100%;
+  background-color: rgb(0, 162, 255);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Dark mode button styles */
+#dark-mode-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+
+#dark-mode-toggle::before {
+  content: "🌙";
+  margin-right: 5px;
+  margin-top:2px;
+}
+
+/* Adjust font colors for dark mode */
+body.dark-mode {
+  color: #fff;
+}
+
+.accordion h2,
+.accordion .question-details a,
+#dark-mode-toggle {
+  color: inherit;
+}
+
+container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+container div {
+  font-size: 36px;
+  font-family: cursive;
+  animation-name: colorChange;
+  margin-top:20px;
+  animation-duration: 5s;
+  animation-timing-function:linear;
+  animation-iteration-count: infinite;
+}
+@keyframes colorChange {
+  0%, 100% {
+    color: rgb(0, 255, 17);
+  }
+  25% {
+    color: rgb(255, 179, 0);
+  }
+  50% {
+    color: rgb(30, 0, 255);
+  }
+  75% {
+    color: rgb(255, 7, 255);
+  }
+}
