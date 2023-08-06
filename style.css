@@ -91,6 +91,20 @@ a:-webkit-any-link {
   color: #000;
   max-width: calc(90% - 10px);
 }
+footer {
+  /* Your footer styles here */
+  background-color: #b300ff;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer:hover {
+  /* Your footer hover styles here */
+  background:linear-gradient(to right,red,blue);
+}
 .accordion .question-details a {
   display: block;
   margin-top: 5px;
