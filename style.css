@@ -127,17 +127,16 @@ li.completed {
   display: flex;
   align-items: center;
 }
-
 body.light-mode #dark-mode-toggle::before {
   content: "🌙";
-   margin-right: 5px;
-  margin-top:2px;
+  margin-top:-3px;
 }
 
 body.dark-mode #dark-mode-toggle::before {
   content: "☀️";
   margin-top:-3px;
 }
+
 
 /* Adjust font colors for dark mode */
 body.dark-mode {
