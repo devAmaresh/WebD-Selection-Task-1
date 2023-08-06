@@ -106,13 +106,13 @@ function renderData(data) {
         <div class="question-details">
       `;
 
-      if (question.tags) {
+          if (question.tags) {
         questionItem.innerHTML += `
-          Tags: ${question.tags}
+          <span class="tags">Tags:${question.tags}</span>
         `;
       } else {
         questionItem.innerHTML += `
-          Tags: N/A
+        <span class="tags">Tags: N/A</span>
         `;
       }
 
