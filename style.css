@@ -80,7 +80,9 @@ a:-webkit-any-link {
   display: none;
   margin-top: 10px;
 }
-
+.tags {
+  overflow-wrap: break-word;
+}
 .accordion .question-details a {
   display: block;
   margin-top: 5px;
