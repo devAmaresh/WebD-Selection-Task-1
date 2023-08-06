@@ -128,11 +128,15 @@ li.completed {
   align-items: center;
 }
 
-
-#dark-mode-toggle::before {
+body.light-mode #dark-mode-toggle::before {
   content: "🌙";
-  margin-right: 5px;
+   margin-right: 5px;
   margin-top:2px;
+}
+
+body.dark-mode #dark-mode-toggle::before {
+  content: "☀️";
+  margin-top:-3px;
 }
 
 /* Adjust font colors for dark mode */
