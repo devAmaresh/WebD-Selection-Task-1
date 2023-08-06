@@ -7,7 +7,7 @@ Let's get to know more about me and my project:
 ## Personal Information
 - **Name:** Amarendra Prasad
 - **Enrollment Number:** IFI2022023
-- **WhatsApp Number:** [Please reach out to me on WhatsApp](https://wa.me/yourphonenumber) (You can add your WhatsApp number in place of "yourphonenumber")
+- **WhatsApp Number:** [Please reach out to me on WhatsApp](https://wa.me/yourphonenumber) N/A
 - **Preferred Bucket:** Backend Development
 
 ## Project Details
