@@ -82,6 +82,14 @@ a:-webkit-any-link {
 }
 .tags {
   overflow-wrap: break-word;
+  display: inline-block;
+  padding: 5px 5px;
+  margin: 5px;
+  border-radius: 10px;
+  border-style: dashed;
+  background-image: linear-gradient(to right,rgb(112, 241, 255),rgb(101, 232, 255));
+  color: #000;
+  max-width: calc(90% - 10px);
 }
 .accordion .question-details a {
   display: block;
