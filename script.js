@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener("DOMContentLoaded", async function () {
   try {
     const data = await fetchDataFromAPI();
@@ -55,18 +54,32 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.body.classList.add("dark-mode");
   }
 
-  // Addig event listener for accordion behavior
   const accordionTitles = document.querySelectorAll(".accordion-title");
   accordionTitles.forEach(titleElement => {
+    const accordionItem = titleElement.parentElement;
+    const questionsList = accordionItem.querySelector(".accordion-content");
+
     titleElement.addEventListener("click", () => {
-      const accordionItem = titleElement.parentElement;
       accordionItem.classList.toggle("active");
-      const questionsList = accordionItem.querySelector(".accordion-content");
       questionsList.style.display = accordionItem.classList.contains("active") ? "block" : "none";
 
-      const questionDetails = accordionItem.querySelector(".question-details");
-      // questionDetails.style.display = accordionItem.classList.contains("active") ? "block" : "none";
+      // Update the accordion state in localStorage
+      if (accordionItem.classList.contains("active")) {
+        localStorage.setItem(`accordion_${accordionItem.dataset.id}`, "open");
+      } else {
+        localStorage.setItem(`accordion_${accordionItem.dataset.id}`, "closed");
+      }
     });
+
+    // Retrieve and apply the "active" class to accordion items from localStorage on page load
+    const savedState = localStorage.getItem(`accordion_${accordionItem.dataset.id}`);
+    if (savedState === "open") {
+      accordionItem.classList.add("active");
+      questionsList.style.display = "block";
+    } else if (savedState === "closed") {
+      accordionItem.classList.remove("active");
+      questionsList.style.display = "none";
+    }
   });
 });
 
@@ -86,7 +99,7 @@ function renderData(data) {
   data.forEach(item => {
     const accordionItem = document.createElement("div");
     accordionItem.className = "accordion";
-
+    accordionItem.setAttribute("data-id", item.sl_no);
     const titleElement = document.createElement("h2");
     titleElement.textContent = item.sl_no + '. ' + item.title;
     titleElement.classList.add("accordion-title"); 
@@ -106,13 +119,13 @@ function renderData(data) {
         <div class="question-details">
       `;
 
-          if (question.tags) {
+      if (question.tags) {
         questionItem.innerHTML += `
           <span class="tags">Tags:${question.tags}</span>
         `;
       } else {
         questionItem.innerHTML += `
-        <span class="tags">Tags: N/A</span>
+          <span class="tags">Tags: N/A</span>
         `;
       }
 
