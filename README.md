@@ -5,7 +5,7 @@ I'm interested in the **Backend/FULL STACK** development bucket.
 Let's get to know more about me and my project:
 
 ## Personal Information
-- **Name:** Amarendra Prasad
+- **Name:** Amaresh Prasad
 - **Enrollment Number:** IFI2022023
 - **WhatsApp Number:** [Please reach out to me on WhatsApp](https://wa.me/yourphonenumber) N/A
 - **Preferred Bucket:** Backend Development
