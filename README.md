@@ -1,6 +1,6 @@
 # Welcome to my GeekHaven selection project GitHub Repository! 👋
 
-I'm interested in the **Backend/FULL STACK** development bucket.
+I'm interested in the **Backend/FULL STACK** development.
 
 Let's get to know more about me and my project:
 
