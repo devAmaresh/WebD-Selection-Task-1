@@ -88,7 +88,7 @@ function renderData(data) {
     accordionItem.className = "accordion";
 
     const titleElement = document.createElement("h2");
-    titleElement.textContent = item.title;
+    titleElement.textContent = item.sl_no + '. ' + item.title;
     titleElement.classList.add("accordion-title"); 
     accordionItem.appendChild(titleElement);
 
