@@ -33,7 +33,21 @@ document.addEventListener("DOMContentLoaded", async function () {
       questionItem.classList.toggle("completed", isChecked);
     }
   });
+// Keyboard shortcuts for navigation
+  document.addEventListener("keydown", event => {
+    const focusedQuestion = document.querySelector(".question-checkbox:focus");
+    if (!focusedQuestion) return;
 
+    const currentIndex = Array.from(checkboxes).indexOf(focusedQuestion);
+
+    if (event.key === "ArrowUp") {
+      const previousIndex = currentIndex > 0 ? currentIndex - 1 : checkboxes.length - 1;
+      checkboxes[previousIndex].focus();
+    } else if (event.key === "ArrowDown") {
+      const nextIndex = currentIndex < checkboxes.length - 1 ? currentIndex + 1 : 0;
+      checkboxes[nextIndex].focus();
+    }
+  });
   // Initialize progress bar and retrieve from localStorage if available
   updateProgressBar(getCompletionRate());
 
