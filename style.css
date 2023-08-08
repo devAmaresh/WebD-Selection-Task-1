@@ -93,7 +93,7 @@ a:-webkit-any-link {
   max-width: calc(90% - 10px);
 }
 footer {
-  /* Your footer styles here */
+  /*  footer styles  */
   background-color: #b300ff;
   color: #fff;
   text-align: center;
@@ -103,7 +103,7 @@ footer {
 }
 
 footer:hover {
-  /* Your footer hover styles here */
+  /*  footer hover */
   background:linear-gradient(to right,red,blue);
 }
 .accordion .question-details a {
@@ -161,7 +161,7 @@ body.dark-mode #dark-mode-toggle::before {
 }
 
 
-/* Adjust font colors for dark mode */
+/* dark mode */
 body.dark-mode {
   color: #fff;
 }
