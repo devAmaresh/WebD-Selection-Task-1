@@ -1,21 +1,25 @@
 /* style.css */
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
 
+body.dark-mode {
+  --background-color: rgb(15 23 42);
+  --text-color: #fff;
+}
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  background-color: var(--background-color);
   margin-bottom: 60px;
-}
-
-body.light-mode {
-  background-color: #f1f1f1;
-  color: #000;
 }
 
 body.dark-mode {
   background-color: rgb(15 23 42);
-  color: #fff;
+  color:  #fff;
 }
 
 #content {
@@ -50,15 +54,25 @@ body.dark-mode {
 
 /* Accordion styles */
 .accordion {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  margin-top:5px;
+  margin-right:5px;
+  margin-left:5px;
   border: 1px solid transparent;
   border-radius: 10px;
   cursor: pointer;
-  padding: 10px;
+  padding: 20px;
   background: linear-gradient(to left,rgb(196, 1, 255),rgb(244, 81, 108));
-  color: #fff;
+  color:var(--text-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+  word-wrap: break-word;
+}
+body.dark-mode .accordion {
+  background: rgb(23, 41, 83);
+  color: var(--text-color);
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.6);
+
 }
 a:-webkit-any-link {
   color: rgb(255, 238, 0);
@@ -69,7 +83,36 @@ a:-webkit-any-link {
   background: linear-gradient(to left, rgb(0, 255, 238), rgb(196, 1, 255));
   border-color:rgb(76, 76, 175);
 }
-
+body.dark-mode .accordion.active{
+  background: linear-gradient(to left, rgb(23, 35, 65), rgb(5, 24, 86));
+  border-color:rgb(76, 76, 175);
+}
+li{
+  background-color: rgb(255, 0, 153);
+  border: 2px solid #000000;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s, box-shadow 0.2s;
+  /* width: calc(90% - -11px); */
+  /* margin: left 0px;;
+  margin-right: 10px; */
+}
+li:hover{
+  opacity: 0.8; 
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
+}
+body.dark-mode li:hover {
+  box-shadow: 0 6px 8px rgba(255, 255, 255, 0.2);
+}
+body.dark-mode li {
+  background-color: rgb(40, 29, 104);
+  border: 2px solid #fff;
+  box-shadow: 2px 1px 6px rgb(0, 255, 195);
+  transition: opacity 0.2s, box-shadow 0.2s;
+  color:#f0f0f0;
+}
 .accordion h2 {
   margin: 0;
   color: inherit;
@@ -115,10 +158,21 @@ footer:hover {
 
 /* Completed question style */
 li.completed {
-  background-color: rgb(83, 85, 81);
-  color:aqua
+  background-color: rgb(1, 184, 74);
+  color: rgb(255, 255, 255);
+  border: 2px solid #000000;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s, box-shadow 0.2s;
 }
-
+body.dark-mode li.completed {
+  background-color: rgb(24, 24, 24);
+  color: rgb(255, 255, 255);
+  border: 2px solid #fff;
+  box-shadow: 0 4px 6px rgb(61, 61, 62);
+}
 /* Progress bar styles */
 #progress-bar-container {
   position: fixed;
@@ -126,7 +180,7 @@ li.completed {
   left: 0;
   height: 10px;
   width: 100%;
-  background-color: #f1f1f1;
+  background-color: #dad6d6;
   z-index: 9999;
 }
 
@@ -149,6 +203,7 @@ li.completed {
   font-size: 24px;
   display: flex;
   align-items: center;
+  transition: color 0.3s ease;
 }
 body.light-mode #dark-mode-toggle::before {
   content: "🌙";
